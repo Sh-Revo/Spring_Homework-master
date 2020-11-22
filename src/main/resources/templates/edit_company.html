@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+
+<form method="POST" modelAttribute="company" action="/api/company/save">
+    <div>
+        <h2>Edit company</h2>
+        <input name="companyid" type="text" th:field="${company.id}" placeholder="id Company" readonly/>
+        <br>
+        <br>
+
+        <input name="namecompany" type="text" th:field="${company.name}" placeholder="Name Company"/>
+        <br>
+        <br>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Edit company</button>
+    </div>
+</form>
+
+</body>
+</html>

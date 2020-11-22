@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        label {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<form method="POST" modelAttribute="user" action="/api/user/save">
+        <h2>Add user</h2>
+
+        <input name="firstname" type="text" th:field="${user.firstname}" placeholder="Firstname"/>
+        <br>
+        <br>
+        <input name="secondname" type="text" th:field="${user.lastname}" placeholder="Secondname"/>
+        <br>
+        <br>
+        <input name="email" type="text" th:field="${user.email}" placeholder="Email"/>
+        <br>
+        <br>
+        <input name="password" type="password" th:field="${user.password}" placeholder="Password"/>
+        <br>
+        <br>
+        <input name="role" type="text" value="2" placeholder="User" readonly/>
+        <label>2 - User (READ ONLY)</label>
+        <br>
+        <br>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+    </div>
+</form>
+
+</body>
+</html>

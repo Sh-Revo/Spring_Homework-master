@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+
+<form method="POST" modelAttribute="product" action="/api/product/save">
+    <div>
+        <h2>Add product</h2>
+
+        <input name="nameproduct" type="text" th:field="${product.name}" placeholder="Name Product"/>
+        <br>
+        <br>
+        <input name="price" type="text" th:field="${product.price}" placeholder="Price"/>
+        <br>
+        <br>
+        <p>Company Name:
+            <select th:field="${product.company.id}">
+                <option value=""> -- </option>
+                <option th:each="company: ${companies}"
+                        th:value="${company.getId()}"
+                        th:utext="${company.getName()}"/>
+            </select>
+        </p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Add product</button>
+    </div>
+</form>
+
+</body>
+</html>
